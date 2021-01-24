@@ -1,8 +1,10 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using Realms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GerenciadorDeChurrascos.Api.Domains
@@ -16,6 +18,7 @@ namespace GerenciadorDeChurrascos.Api.Domains
         public string Informacoes { get; set; }
         public decimal ValorArrecadado { get; set; }
         public DateTime Data { get; set; }
-        public List<ParticipanteDomain> Participantes { get; set; }
+        public ParticipanteDomain[] Participantes { get; set; }
     }
+    
 }

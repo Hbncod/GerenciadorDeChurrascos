@@ -12,4 +12,8 @@
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)realm.fody\5.1.2\build\Realm.Fody.props" Condition="Exists('$(NuGetPackageRoot)realm.fody\5.1.2\build\Realm.Fody.props')" />
+    <Import Project="$(NuGetPackageRoot)realm\5.1.2\build\Realm.props" Condition="Exists('$(NuGetPackageRoot)realm\5.1.2\build\Realm.props')" />
+  </ImportGroup>
 </Project>

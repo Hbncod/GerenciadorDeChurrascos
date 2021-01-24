@@ -8,9 +8,17 @@ namespace GerenciadorDeChurrascos.Api.Interfaces
 {
     public interface IChurrascoRepository
     {
+        /// <summary>
+        /// Lista todos os 
+        /// </summary>
+        /// <returns></returns>
         List<ChurrascoDomain> Listar();
         void Adicionar(ChurrascoDomain churrasco);
         void Atualizar(string id, ChurrascoDomain churrasco);
         void Remover(string id);
+        ChurrascoDomain BuscarporId(string id);
+        void AdicionarParticipante(string idChurrasco,ParticipanteDomain participante);
+        void RemoverParticipante(string idChurrasco,int posicaoArray);
+
     }
 }

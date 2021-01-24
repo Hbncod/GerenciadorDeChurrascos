@@ -12,7 +12,7 @@ namespace GerenciadorDeChurrascos.Api.Repositories
     public class ChurrascoRepository : IChurrascoRepository
     {
         private readonly IMongoCollection<ChurrascoDomain> _churrasco;
-        public ChurrascoRepository(IChurrascoDatabaseSettions settings)
+        public ChurrascoRepository(IChurrascostoreDatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
@@ -22,12 +22,18 @@ namespace GerenciadorDeChurrascos.Api.Repositories
 
         public void Adicionar(ChurrascoDomain churrasco)
         {
-            throw new NotImplementedException();
+            _churrasco.InsertOne(churrasco);
         }
 
         public void Atualizar(string id, ChurrascoDomain churrasco)
         {
-            throw new NotImplementedException();
+            
+            _churrasco.ReplaceOne(c => c.Id == id, churrasco);
+        }
+
+        public ChurrascoDomain BuscarporId(string id)
+        {
+            return _churrasco.Find<ChurrascoDomain>(c => c.Id == id).First();
         }
 
         public List<ChurrascoDomain> Listar()
@@ -37,7 +43,24 @@ namespace GerenciadorDeChurrascos.Api.Repositories
 
         public void Remover(string id)
         {
-            throw new NotImplementedException();
+            _churrasco.DeleteOne(c => c.Id == id);
+        }
+        public void AdicionarParticipante(string idChurrasco, ParticipanteDomain participante)
+        {
+            ChurrascoDomain churrasco = BuscarporId(idChurrasco);
+            List<ParticipanteDomain> participantesList = churrasco.Participantes.ToList();
+            participantesList.Add(participante);
+            churrasco.Participantes = participantesList.ToArray();
+            _churrasco.ReplaceOne(c => c.Id == idChurrasco, churrasco);
+        }
+        public void RemoverParticipante(string idChurrasco, int posicaoArray)
+        {
+            ChurrascoDomain churrasco = BuscarporId(idChurrasco);
+            List<ParticipanteDomain> participantesList = churrasco.Participantes.ToList();
+            participantesList.RemoveAt(posicaoArray);
+            churrasco.Participantes = participantesList.ToArray();
+            _churrasco.ReplaceOne(c => c.Id == idChurrasco, churrasco);
+
         }
     }
 }

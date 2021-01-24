@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace GerenciadorDeChurrascos.Api
 {
@@ -30,14 +31,21 @@ namespace GerenciadorDeChurrascos.Api
         public void ConfigureServices(IServiceCollection services)
         {
             // requires using Microsoft.Extensions.Options
-            services.Configure<ChurrascoDatabaseSettions>(
-                Configuration.GetSection(nameof(ChurrascoDatabaseSettions)));
+            services.Configure<ChurrascostoreDatabaseSettings>(
+                Configuration.GetSection(nameof(ChurrascostoreDatabaseSettings)));
 
-            services.AddSingleton<IChurrascoDatabaseSettions>(sp =>
-                sp.GetRequiredService<IOptions<ChurrascoDatabaseSettions>>().Value);
+            services.AddSingleton<IChurrascostoreDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<ChurrascostoreDatabaseSettings>>().Value);
             services.AddSingleton<IChurrascoRepository, ChurrascoRepository>();
             services.AddSingleton<IUsuarioRepository, UsuarioRepository>();
-            services.AddControllers();
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    // Ignora valores nulos ao fazer junções nas consultas
+                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+                    // Ignora os loopings nas consultas
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
