@@ -19,6 +19,6 @@ namespace GerenciadorDeChurrascos.Api.Interfaces
         ChurrascoDomain BuscarporId(string id);
         void AdicionarParticipante(string idChurrasco,ParticipanteDomain participante);
         void RemoverParticipante(string idChurrasco,int posicaoArray);
-
+        void AtualizaValorArrecadado(ChurrascoDomain churrascoDomain);
     }
 }

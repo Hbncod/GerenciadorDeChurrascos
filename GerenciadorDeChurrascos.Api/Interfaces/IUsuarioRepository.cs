@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GerenciadorDeChurrascos.Api.Interfaces
 {
-    interface IUsuarioRepository
+    public interface IUsuarioRepository
     {
         /// <summary>
         /// Lista os usuários

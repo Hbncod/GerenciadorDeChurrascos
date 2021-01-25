@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GerenciadorDeChurrascos.Api</name>
+    </assembly>
+    <members>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.ChurrascosController.Listar">
+            <summary>
+            Listar churrascos
+            </summary>
+            <returns>Uma lista com todos os churrascos cadastrados</returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.ChurrascosController.BuscarPorId(System.String)">
+            <summary>
+            Buscar churrasco por id
+            </summary>
+            <param name="id">id do churrasco a ser buscado</param>
+            <returns>O churrasco referente ao id informado</returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.ChurrascosController.AdicionarChurrasco(GerenciadorDeChurrascos.Api.Domains.ChurrascoDomain)">
+            <summary>
+            Adicionar um novo churrasco
+            </summary>
+            <param name="churrasco">Churrasco a ser cadastrado</param>
+            <returns>status code created</returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.ChurrascosController.AtualizarChurrasco(System.String,GerenciadorDeChurrascos.Api.Domains.ChurrascoDomain)">
+            <summary>
+            Atualizar churrasco
+            </summary>
+            <param name="id">Id do churrasco a ser atualizado</param>
+            <param name="novosDados">novos dados</param>
+            <returns>status code nocontent</returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.ChurrascosController.DeletarChurrasco(System.String)">
+            <summary>
+            Deletar churrasco
+            </summary>
+            <param name="idChurrasco">id do churrasco a ser deletado</param>
+            <returns>status code nocontent</returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.ChurrascosController.AdicionarParticipante(System.String,GerenciadorDeChurrascos.Api.Domains.ParticipanteDomain)">
+            <summary>
+            Adicionar participante
+            </summary>
+            <param name="idChurrasco">id do churrasco em que vai adicionar o participante</param>
+            <param name="participante">Dados do participante a ser adicionado</param>
+            <returns>status code created</returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.ChurrascosController.RemoverParticipante(System.String,System.Int32)">
+            <summary>
+            Remover um participante
+            </summary>
+            <param name="idChurrasco">Id do churrasco em que se vai remover o participante</param>
+            <param name="pocicaoArray">Posição no array do participante a ser excluido</param>
+            <returns>status code no content</returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.LoginController.Post(GerenciadorDeChurrascos.Api.NovaPasta.LoginViewModel)">
+            <summary>
+            Faz o login do usuário
+            </summary>
+            <param name="login"></param>
+            <returns>Token do usuário</returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.UsuariosController.Get">
+            <summary>
+            Busca todos os usuários
+            </summary>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.UsuariosController.BuscarPorId(System.String)">
+            <summary>
+            Busca um usuário pelo seu id
+            </summary>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.UsuariosController.Cadastro(GerenciadorDeChurrascos.Api.Domains.UsuarioDomain)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.UsuariosController.Patch(System.String,GerenciadorDeChurrascos.Api.Domains.UsuarioDomain)">
+            <summary>
+            Atualiza um usuário pelo seu id
+            </summary>
+            <param name="id">Id do usuário a ser atualizado</param>
+            <param name="usuarioAtualizado">Dados atualizados do usuário</param>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Controllers.UsuariosController.Delete(System.String)">
+            <summary>
+            Deleta um usuário pelo seu id
+            </summary>
+            <param name="id">Id do usuário a ser deletado</param>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Interfaces.IChurrascoRepository.Listar">
+            <summary>
+            Lista todos os 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Interfaces.IUsuarioRepository.Listar">
+            <summary>
+            Lista os usuários
+            </summary>
+            <returns>Uma lista de usuario</returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Interfaces.IUsuarioRepository.BuscarPorId(System.String)">
+            <summary>
+            Lista um usuário pelo seu id
+            </summary>
+            <param name="id">Id do usuario a ser buscado</param>
+            <returns>O usuário do id informado</returns>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Interfaces.IUsuarioRepository.Cadastrar(GerenciadorDeChurrascos.Api.Domains.UsuarioDomain)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+            <param name="novoUsuario">Dados do usuário a ser cadastrado</param>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Interfaces.IUsuarioRepository.Atualizar(System.String,GerenciadorDeChurrascos.Api.Domains.UsuarioDomain)">
+            <summary>
+            Atualiza um usuário
+            </summary>
+            <param name="id">Id do usuário a ser atualizado</param>
+            <param name="usuarioAtualizado">dados do usuário atualizado</param>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Interfaces.IUsuarioRepository.Deletar(System.String)">
+            <summary>
+            Deleta um usuário pel seu id
+            </summary>
+            <param name="id">Id do usuário a ser deletado</param>
+        </member>
+        <member name="M:GerenciadorDeChurrascos.Api.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Faz o login do usuário
+            </summary>
+            <param name="email">email para ser comparado ao realizar o login</param>
+            <param name="senha">senha a ser comparada ao realizar o login</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

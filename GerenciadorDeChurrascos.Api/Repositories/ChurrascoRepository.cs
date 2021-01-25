@@ -52,6 +52,7 @@ namespace GerenciadorDeChurrascos.Api.Repositories
                 List<ParticipanteDomain> participantesList = churrasco.Participantes.ToList();
                 participantesList.Add(participante);
                 churrasco.Participantes = participantesList.ToArray();
+                AtualizaValorArrecadado(churrasco);
                 _churrasco.ReplaceOne(c => c.Id == idChurrasco, churrasco);
             }
             else
@@ -68,6 +69,7 @@ namespace GerenciadorDeChurrascos.Api.Repositories
                 List<ParticipanteDomain> participantesList = churrasco.Participantes.ToList();
                 participantesList.RemoveAt(posicaoArray);
                 churrasco.Participantes = participantesList.ToArray();
+                AtualizaValorArrecadado(churrasco);
                 _churrasco.ReplaceOne(c => c.Id == idChurrasco, churrasco);
             }
             else
@@ -75,6 +77,18 @@ namespace GerenciadorDeChurrascos.Api.Repositories
                 throw new Exception("Churrasco não Existe");
             }
 
+        }
+        public void AtualizaValorArrecadado(ChurrascoDomain churrascoDomain)
+        {
+            decimal vlrArrecadado = 0;
+            foreach (var participantes in churrascoDomain.Participantes)
+            {
+                if(participantes.Pagou)
+                {
+                    vlrArrecadado = vlrArrecadado + participantes.Contribuicao;
+                }
+            }
+            churrascoDomain.ValorArrecadado = vlrArrecadado;
         }
     }
 }
