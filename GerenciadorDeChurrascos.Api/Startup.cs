@@ -38,14 +38,7 @@ namespace GerenciadorDeChurrascos.Api
                 sp.GetRequiredService<IOptions<ChurrascostoreDatabaseSettings>>().Value);
             services.AddSingleton<IChurrascoRepository, ChurrascoRepository>();
             services.AddSingleton<IUsuarioRepository, UsuarioRepository>();
-            services.AddControllers()
-                .AddNewtonsoftJson(options =>
-                {
-                    // Ignora valores nulos ao fazer junções nas consultas
-                    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
-                    // Ignora os loopings nas consultas
-                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                });
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

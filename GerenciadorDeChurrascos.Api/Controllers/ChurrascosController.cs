@@ -62,6 +62,7 @@ namespace GerenciadorDeChurrascos.Api.Controllers
         {
             try
             {
+                novosDados.Id = id;
                 _repository.Atualizar(id, novosDados);
                 return StatusCode(204);
             }
@@ -83,7 +84,7 @@ namespace GerenciadorDeChurrascos.Api.Controllers
                 return BadRequest(error);
             }
         }
-        [HttpPost("/participante/{idChurasco}")]
+        [HttpPost("{idChurrasco}")]
         public IActionResult AdicionarParticipante(string idChurrasco, ParticipanteDomain participante)
         {
             try
@@ -96,7 +97,7 @@ namespace GerenciadorDeChurrascos.Api.Controllers
                 return BadRequest(error);
             }
         }
-        [HttpDelete("participante/{idChurrasco}/{pocicaoArray}")]
+        [HttpDelete("{idChurrasco}/{pocicaoArray}")]
         public IActionResult RemoverParticipante(string idChurrasco, int pocicaoArray)
         {
             try

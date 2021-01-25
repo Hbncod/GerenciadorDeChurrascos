@@ -27,7 +27,6 @@ namespace GerenciadorDeChurrascos.Api.Repositories
 
         public void Atualizar(string id, ChurrascoDomain churrasco)
         {
-            
             _churrasco.ReplaceOne(c => c.Id == id, churrasco);
         }
 
@@ -48,18 +47,33 @@ namespace GerenciadorDeChurrascos.Api.Repositories
         public void AdicionarParticipante(string idChurrasco, ParticipanteDomain participante)
         {
             ChurrascoDomain churrasco = BuscarporId(idChurrasco);
-            List<ParticipanteDomain> participantesList = churrasco.Participantes.ToList();
-            participantesList.Add(participante);
-            churrasco.Participantes = participantesList.ToArray();
-            _churrasco.ReplaceOne(c => c.Id == idChurrasco, churrasco);
+            if (churrasco != null)
+            {
+                List<ParticipanteDomain> participantesList = churrasco.Participantes.ToList();
+                participantesList.Add(participante);
+                churrasco.Participantes = participantesList.ToArray();
+                _churrasco.ReplaceOne(c => c.Id == idChurrasco, churrasco);
+            }
+            else
+            {
+                throw new Exception("Churrasco não Existe");
+            }
+            
         }
         public void RemoverParticipante(string idChurrasco, int posicaoArray)
         {
             ChurrascoDomain churrasco = BuscarporId(idChurrasco);
-            List<ParticipanteDomain> participantesList = churrasco.Participantes.ToList();
-            participantesList.RemoveAt(posicaoArray);
-            churrasco.Participantes = participantesList.ToArray();
-            _churrasco.ReplaceOne(c => c.Id == idChurrasco, churrasco);
+            if (churrasco != null)
+            {
+                List<ParticipanteDomain> participantesList = churrasco.Participantes.ToList();
+                participantesList.RemoveAt(posicaoArray);
+                churrasco.Participantes = participantesList.ToArray();
+                _churrasco.ReplaceOne(c => c.Id == idChurrasco, churrasco);
+            }
+            else
+            {
+                throw new Exception("Churrasco não Existe");
+            }
 
         }
     }

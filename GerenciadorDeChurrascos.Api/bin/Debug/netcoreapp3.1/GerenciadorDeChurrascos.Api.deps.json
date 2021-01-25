@@ -25,6 +25,7 @@
       "GerenciadorDeChurrascos.Api/1.0.0": {
         "dependencies": {
           "MongoDB.Driver": "2.11.6",
+          "Newtonsoft.Json": "12.0.3",
           "Realm": "5.1.2",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -467,11 +468,11 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/12.0.1": {
+      "Newtonsoft.Json/12.0.3": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.1.22727"
+            "fileVersion": "12.0.3.23909"
           }
         },
         "compile": {
@@ -523,7 +524,7 @@
       "Realm/5.1.2": {
         "dependencies": {
           "Fody": "6.3.0",
-          "Newtonsoft.Json": "12.0.1",
+          "Newtonsoft.Json": "12.0.3",
           "Nito.AsyncEx.Context": "5.0.0",
           "Realm.Fody": "5.1.2",
           "Remotion.Linq": "2.2.0",
@@ -3040,12 +3041,12 @@
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.1": {
+    "Newtonsoft.Json/12.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
-      "path": "newtonsoft.json/12.0.1",
-      "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "Nito.AsyncEx.Context/5.0.0": {
       "type": "package",

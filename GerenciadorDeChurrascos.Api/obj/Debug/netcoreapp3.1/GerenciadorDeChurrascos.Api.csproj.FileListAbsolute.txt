@@ -36,3 +36,6 @@ C:\Users\HENRIQUE\Desktop\GerenciadorDeChurrascos\GerenciadorDeChurrascos.Api\bi
 C:\Users\HENRIQUE\Desktop\GerenciadorDeChurrascos\GerenciadorDeChurrascos.Api\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\librealm-wrappers.dylib
 C:\Users\HENRIQUE\Desktop\GerenciadorDeChurrascos\GerenciadorDeChurrascos.Api\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\realm-wrappers.dll
 C:\Users\HENRIQUE\Desktop\GerenciadorDeChurrascos\GerenciadorDeChurrascos.Api\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\realm-wrappers.dll
+C:\Users\HENRIQUE\Desktop\GerenciadorDeChurrascos\GerenciadorDeChurrascos.Api\obj\Debug\netcoreapp3.1\GerenciadorDeChurrascos.Api.csproj.CoreCompileInputs.cache
+C:\Users\HENRIQUE\Desktop\GerenciadorDeChurrascos\GerenciadorDeChurrascos.Api\obj\Debug\netcoreapp3.1\GerenciadorDeChurrascos.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HENRIQUE\Desktop\GerenciadorDeChurrascos\GerenciadorDeChurrascos.Api\obj\Debug\netcoreapp3.1\GerenciadorDeChurrascos.Api.csproj.Fody.CopyLocal.cache
